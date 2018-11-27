@@ -32,6 +32,10 @@ $$Pr(Y_{i} = K-1) = \frac{e^{\beta_{K-1}\cdot X_{i}}}{1 +  \sum^{K-1}_{k=1}e^{\b
 $$Pr(Y_{i} = K) = \frac{1}{1 +  \sum^{K-1}_{k=1}e^{\beta_{k}\cdot X_{i}}}$$
 The fact that we run multiple regressions reveals why the model relies on the assumption of independence of irrelevant alternatives described above.
 
+## Importance of the multinomial logistic regression model
+Multinomial logistic regression is an extension of binary logistic regression that dependent variables have more than two categories. The model is used to predict the probabilities of the different outcomes. It is important and useful since we can predict and then control the outcome by some degrees.
+
+
 ## Data Summary
 In this tutorial, we will work on the *Iris flower data set*. This famout Fisher's Iris data set is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper *"The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis."* It is sometimes called Anderson's Iris data set because Edgar Anderson collected the data to quantify the morphologic variation of Iris flowers of three related species. 
 
@@ -324,25 +328,30 @@ display species_pre - species_ori
 
 ## Output summary
 
-- The results summary are as followed. The coefficients for predictors from 3 language examples are different. Interestingly, the coefficients in the model comparing virginica with setosa are quite different while the coefficients in the model comparing virginica with versicolor are pretty similar with some errors.  
+The results summary are as followed. The coefficients for predictors from 3 language examples are different. Interestingly, the coefficients in the model comparing virginica with setosa are quite different while the coefficients in the model comparing virginica with versicolor are pretty similar with some errors.  
 
-[Setosa]
+Setosa
+
 |     | intercept | Sepal.Length | Sepal.Width  | Petal.Length | petal.Width |
 |---- | --------- | ----------| ----------  | ----------| ---------- | 
 |R    | 5.29  | 10.98 | 16.79 | -23.70 | -18.18 | 
 |SAS  | 35.87 | 2.31  | 13.13 | -12.59| -23.89 | 
 |STATA| 32.23 | 2.46  | 22.67 | -19.65| -32.76| 
 
-[Versicolor]
+
+Versicolor
+
 |     | intercept | Sepal.Length | Sepal.Width  | Petal.Length | petal.Width |
 |---- | --------- | ----------| ----------  | ----------| ---------- | 
 |R    | 41.56 | 2.42 | 6.59 | -9.22 | -17.94 | 
 |SAS  | 41.13 | 2.41 | 6.53 | -9.14 | -17.77 | 
 |STATA| 41.79 | 2.41 | 6.61 | -9.25 | -17.99 | 
 
+
 It may be because the coefficients of the former are not significant at all while some of the coefficients of the latter are significant. We will figure it out more later.
 
-[p-value calculated in R]
+p-value calculated in R
+
 |     | intercept | Sepal.Length | Sepal.Width  | Petal.Length | petal.Width |
 |---- | --------- | ----------| ----------  | ----------| ---------- | 
 |Setosa  | 0.7764003  | 0.5530163 | 0.7705312 | 0.75369076 | 0.65243097 | 
